@@ -26,4 +26,7 @@
     /* ===== FONTS ===== */
     --font-heading: "Bricolage Grotesque", sans-serif;
     --font-body: "Poppins", sans-serif;
+
+    /* ===== LAYOUT ===== */
+    --max-width-container: 1700px;
 }
