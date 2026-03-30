@@ -22,4 +22,8 @@
     --color-orange: #ff9d40;
     --color-alt-orange: #ffbe80;
     --color-light-orange: #ffdebf;
+
+    /* ===== FONTS ===== */
+    --font-heading: "Bricolage Grotesque", sans-serif;
+    --font-body: "Poppins", sans-serif;
 }
