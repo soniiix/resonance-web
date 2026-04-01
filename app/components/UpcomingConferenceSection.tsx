@@ -35,29 +35,18 @@ export default function UpcomingConferenceSection() {
     return (
         <section className="relative w-full py-24 bg-[var(--color-black)] overflow-hidden">
             {/* Dynamic Ribbon Background */}
-            <div className="absolute top-1/2 left-0 w-[150%] h-[500px] -translate-y-1/2 -translate-x-[10%] opacity-40 z-0 pointer-events-none">
-                <svg width="100%" height="100%" viewBox="0 0 1440 600" className="absolute top-0 left-0 w-full h-full object-cover" preserveAspectRatio="none">
+            <div className="absolute top-[65%] left-0 w-full h-[400px] -translate-y-[70%] opacity-50 z-0 pointer-events-none">
+                <svg width="100%" height="100%" viewBox="0 0 1440 800" className="absolute top-0 left-0 w-full h-full" preserveAspectRatio="none">
                     <path
-                        d="M-200,300 C200,500 800,100 1440,300 L1600,450 C1000,200 400,600 -200,400 Z"
-                        fill="url(#ribbon-gradient-1)"
-                        opacity="0.8"
-                    />
-                    <path
-                        d="M-200,350 C300,600 900,150 1440,350 L1600,400 C900,250 300,650 -200,450 Z"
-                        fill="url(#ribbon-gradient-2)"
-                        opacity="0.5"
+                        d="M-200,600 Q720,0 1640,600 L1640,800 Q720,200 -200,800 Z"
+                        fill="url(#ribbon-gradient)"
+                        className="drop-shadow-2xl"
                     />
                     <defs>
-                        <linearGradient id="ribbon-gradient-1" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" stopColor="var(--color-alt-purple)" />
-                            <stop offset="40%" stopColor="var(--color-pure-purple)" />
-                            <stop offset="80%" stopColor="var(--color-orange)" />
+                        <linearGradient id="ribbon-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="-10%" stopColor="var(--color-purple)" />
+                            <stop offset="30%" stopColor="var(--color-pure-orange)" />
                             <stop offset="100%" stopColor="var(--color-pure-orange)" />
-                        </linearGradient>
-                        <linearGradient id="ribbon-gradient-2" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" stopColor="var(--color-orange)" />
-                            <stop offset="50%" stopColor="var(--color-pure-purple)" />
-                            <stop offset="100%" stopColor="var(--color-alt-purple)" />
                         </linearGradient>
                     </defs>
                 </svg>
