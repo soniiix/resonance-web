@@ -33,7 +33,7 @@ const conferences = [
 
 export default function UpcomingConferenceSection() {
     return (
-        <section className="relative w-full py-24 bg-[var(--color-black)] overflow-hidden">
+        <section className="relative w-full py-24 bg-black overflow-hidden">
             {/* Dynamic Ribbon Background */}
             <div className="absolute top-[65%] left-0 w-full h-[400px] -translate-y-[70%] opacity-50 z-0 pointer-events-none">
                 <svg width="100%" height="100%" viewBox="0 0 1440 800" className="absolute top-0 left-0 w-full h-full" preserveAspectRatio="none">
