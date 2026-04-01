@@ -10,14 +10,14 @@ interface UpcomingConferenceCardProps {
 
 export default function UpcomingConferenceCard({ placesLeft, date, title, image }: UpcomingConferenceCardProps) {
     return (
-        <div className="relative min-w-[380px] max-w-[380px] lg:min-w-[500px] lg:max-w-[500px] h-[450px] sm:h-[500px] rounded-base overflow-hidden snap-center flex-shrink-0 group cursor-pointer  border border-white/5 transition-all duration-300  hover:border-white/10">
+        <div className="relative min-w-[380px] max-w-[380px] lg:min-w-[500px] lg:max-w-[500px] h-[450px] sm:h-[550px] rounded-base overflow-hidden snap-center flex-shrink-0 group cursor-pointer  border border-white/5 transition-all duration-300  hover:border-white/10">
             {/* Background Image */}
             <div className="absolute inset-0">
                 <Image
                     src={image}
                     alt={title}
                     fill
-                    className="object-cover w-full h-full transition-transform duration-700 ease-out group-hover:scale-110"
+                    className="object-cover scale-102 w-full h-full transition-transform duration-700 ease-out group-hover:scale-110"
                     sizes="(max-width: 640px) 300px, 380px"
                 />
             </div>
