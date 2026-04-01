@@ -30,4 +30,10 @@
 
     /* ===== LAYOUT ===== */
     --max-width-container: 1700px;
+
+    /* ===== BORDER RADIUS ===== */
+    --radius-base: 15px;
+
+    /* ===== GRADIENTS ===== */
+    --background-image-gradient-brand: linear-gradient(225deg, var(--color-pure-orange) -3.69%, var(--color-purple) 81.45%);
 }
