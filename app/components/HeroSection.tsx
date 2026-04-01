@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function HeroSection() {
     return (
-        <section className="relative w-full h-[866px] overflow-hidden">
+        <section className="relative w-full h-[866px] max-h-screen overflow-hidden">
             {/* Background image */}
             <Image
                 src="/images/hero-background.png"
@@ -30,12 +30,12 @@ export default function HeroSection() {
                         <div>QUI ONT DU SENS</div>
                     </h1>
 
-                    <div className="flex flex-wrap items-center gap-5 mt-5">
+                    <div className="flex flex-wrap items-center gap-4 mt-5">
                         <Link
                             href="/abonnement"
                             className="inline-flex items-center justify-center px-8 py-2.5 text-xl bg-pure-orange text-pure-white font-body font-semibold rounded-[15px] hover:bg-pure-orange/95 transition-colors duration-200"
                         >
-                            S'abonner
+                            Rejoindre l'expérience
                         </Link>
                         <Link
                             href="/besoin-conference"
