@@ -61,7 +61,7 @@ const podcasts = [
     },
     {
         id: 3,
-        title: "Handicap et nouvelle technologie",
+        title: "Handicap et nouvelles technologies",
         image: "/images/podcast-3.png",
         episodes: [
             { id: 1, title: "Épisode 1 : Accessibilité", description: "20/04/2026 à 15:30 - 20m40s" },
@@ -71,7 +71,7 @@ const podcasts = [
     },
     {
         id: 4,
-        title: "Handicap et nouvelle technologie",
+        title: "Handicap et nouvelles technologies",
         image: "/images/podcast-1.png",
         episodes: [
             { id: 1, title: "Épisode 1 : Accessibilité", description: "20/04/2026 à 15:30 - 20m40s" },
