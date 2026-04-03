@@ -5,6 +5,7 @@ import LatestContentSection from "./components/LatestContentSection";
 import ConceptSection from "./components/ConceptSection";
 import StatsSection from "./components/StatsSection";
 import ReviewSection from "./components/ReviewSection";
+import FaqSection from "./components/FaqSection";
 
 export default function Home() {
     return (
@@ -17,6 +18,7 @@ export default function Home() {
                 <ConceptSection />
                 <StatsSection />
                 <ReviewSection />
+                <FaqSection />
             </main>
         </>
     );
