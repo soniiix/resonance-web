@@ -4,6 +4,7 @@ import UpcomingConferenceSection from "./components/UpcomingConferenceSection";
 import LatestContentSection from "./components/LatestContentSection";
 import ConceptSection from "./components/ConceptSection";
 import StatsSection from "./components/StatsSection";
+import ReviewSection from "./components/ReviewSection";
 
 export default function Home() {
     return (
@@ -15,6 +16,7 @@ export default function Home() {
                 <LatestContentSection />
                 <ConceptSection />
                 <StatsSection />
+                <ReviewSection />
             </main>
         </>
     );
