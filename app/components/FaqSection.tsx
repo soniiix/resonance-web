@@ -21,7 +21,7 @@ export default function FaqSection() {
     const [openIndex, setOpenIndex] = useState<number | null>(null);
 
     return (
-        <section className="relative w-full pt-12 pb-20 flex flex-col items-center overflow-hidden">
+        <section className="relative w-full pt-10 pb-34 flex flex-col items-center overflow-hidden">
             {/* Background Curved Section (Convex style) */}
             <div
                 className="absolute inset-x-[-15%] top-0 bottom-0 bg-[#1a161d]"

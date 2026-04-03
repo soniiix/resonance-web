@@ -6,6 +6,7 @@ import ConceptSection from "./components/ConceptSection";
 import StatsSection from "./components/StatsSection";
 import ReviewSection from "./components/ReviewSection";
 import FaqSection from "./components/FaqSection";
+import Footer from "./components/Footer";
 
 export default function Home() {
     return (
@@ -20,6 +21,7 @@ export default function Home() {
                 <ReviewSection />
                 <FaqSection />
             </main>
+            <Footer />
         </>
     );
 }
