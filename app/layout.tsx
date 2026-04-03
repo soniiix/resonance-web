@@ -32,7 +32,7 @@ export default function RootLayout({
             lang="fr"
             className={`${bricolage.variable} ${poppins.variable} h-full antialiased`}
         >
-            <body className="min-h-full flex flex-col font-body selection:bg-pure-orange selection:text-pure-white">
+            <body className="min-h-full flex flex-col font-body selection:bg-pure-orange selection:text-pure-white bg-dark-purple">
                 {children}
             </body>
         </html>
