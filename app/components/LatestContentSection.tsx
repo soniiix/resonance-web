@@ -1,6 +1,7 @@
 import { MagnifyingGlass, DotsThreeVertical } from "@phosphor-icons/react/dist/ssr";
 import LiveCard from "./LiveCard";
 import PodcastCard from "./PodcastCard";
+import ArticleCard from "./ArticleCard";
 
 const categories = [
     "Santé",
@@ -77,6 +78,27 @@ const podcasts = [
             { id: 2, title: "Épisode 2 : Outils du quotidien", description: "20/04/2026 à 15:30 - 20m40s" },
             { id: 3, title: "Épisode 3 : Témoignages", description: "20/04/2026 à 15:30 - 20m40s" }
         ]
+    }
+];
+
+const articles = [
+    {
+        id: 1,
+        title: "L'IA au service des personnes en situation d'handicap",
+        image: "/images/article-1.png",
+        href: "/"
+    },
+    {
+        id: 2,
+        title: "L'IA au service des personnes en situation d'handicap",
+        image: "/images/article-2.png",
+        href: "/"
+    },
+    {
+        id: 3,
+        title: "L'IA au service des personnes en situation d'handicap",
+        image: "/images/article-3.png",
+        href: "/"
     }
 ];
 
@@ -176,6 +198,34 @@ export default function LatestContentSection() {
                             title={podcast.title}
                             image={podcast.image}
                             episodes={podcast.episodes}
+                        />
+                    ))}
+                </div>
+            </div>
+
+            {/* NOS ARTICLES Title */}
+            <div className="text-center mb-4 md:mb-6 mt-16 md:mt-20">
+                <h3 className="font-heading font-bold text-[28px] md:text-4xl lg:text-[44px] uppercase text-pure-white drop-shadow-md">
+                    NOS ARTICLES
+                </h3>
+            </div>
+
+            {/* Articles Cards Slider Container */}
+            <div className="relative z-10 w-full pl-6 md:pl-12 lg:pl-[max(3rem,calc((100vw-var(--max-width-container))/2+3rem))] pb-20">
+                <div
+                    className="flex justify-center overflow-x-auto gap-6 sm:gap-8 pb-12 snap-x snap-mandatory pt-4 pr-6 md:pr-12 w-full"
+                    style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+                >
+                    <style dangerouslySetInnerHTML={{
+                        __html: `div::-webkit-scrollbar { display: none; }`
+                    }} />
+
+                    {articles.map(article => (
+                        <ArticleCard
+                            key={article.id}
+                            title={article.title}
+                            image={article.image}
+                            href={article.href}
                         />
                     ))}
                 </div>
