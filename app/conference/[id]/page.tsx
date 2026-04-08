@@ -119,7 +119,7 @@ export default function ConferencePage({ params }: { params: { id: string } }) {
                 <section className="flex flex-col lg:flex-row gap-10 items-start">
                     {/* Left: Podcast Card */}
                     <div className="w-full lg:w-[420px] shrink-0">
-                        <div className="bg-pure-white rounded-[40px] overflow-hidden shadow-2xl group cursor-pointer transition-transform hover:scale-[1.02]">
+                        <div className="bg-pure-white rounded-[40px] overflow-hidden shadow-2xl group cursor-pointer">
                             <div className="relative aspect-4/3">
                                 <Image
                                     src="/images/conference-1.png"
@@ -134,7 +134,7 @@ export default function ConferencePage({ params }: { params: { id: string } }) {
                                 </div>
                             </div>
                             <div className="p-8 pb-10">
-                                <p className="font-bold text-black text-xl mb-1">Podcast</p>
+                                <p className="font-semibold text-black text-2xl mb-2">Podcast</p>
                                 <p className="text-black/60 font-medium">20/04/2026 à 15:30 - 20m40s</p>
                             </div>
                         </div>
@@ -159,8 +159,9 @@ export default function ConferencePage({ params }: { params: { id: string } }) {
                                     <button title="Ajouter aux favoris">
                                         <Star weight="fill" className="text-pure-white w-8 h-8" />
                                     </button>
-                                    <button title="Écouter">
-                                        <PlayCircle weight="fill" className="text-pure-white w-12 h-12" />
+                                    <button title="Écouter" className="relative hover:scale-110 transition-transform">
+                                        <div className="absolute inset-1 bg-gradient-brand rounded-full" />
+                                        <PlayCircle weight="fill" className="text-pure-white w-12 h-12 relative z-10" />
                                     </button>
                                 </div>
                             </div>
