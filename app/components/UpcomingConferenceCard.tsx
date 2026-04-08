@@ -12,7 +12,11 @@ interface UpcomingConferenceCardProps {
 
 export default function UpcomingConferenceCard({ id, placesLeft, date, title, image }: UpcomingConferenceCardProps) {
     return (
-        <Link href={`/conference/${id}`} className="block">
+        <Link 
+            href={`/conference/${id}`} 
+            className="block"
+            draggable="false"
+        >
             <div className="relative min-w-[380px] max-w-[380px] lg:min-w-[500px] lg:max-w-[500px] h-[450px] sm:h-[550px] rounded-base overflow-hidden snap-center flex-shrink-0 group cursor-pointer shadow-[0_4px_31px_-2px_rgba(0,0,0,0.38)] transition-all duration-300">
                 {/* Background Image */}
                 <div className="absolute inset-0">
