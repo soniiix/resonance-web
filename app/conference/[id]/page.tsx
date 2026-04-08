@@ -12,7 +12,7 @@ export default function ConferencePage({ params }: { params: { id: string } }) {
             <main className="max-w-container mx-auto px-8 pt-38 pb-32">
                 {/* Header Section */}
                 <header className="mb-16">
-                    <h1 className="font-heading font-bold text-[42px] md:text-[68px] lg:text-[54px] leading-[1] uppercase mb-12 max-w-6xl">
+                    <h1 className="font-heading font-bold text-[42px] md:text-[68px] lg:text-[54px] leading-none uppercase mb-12 max-w-6xl">
                         L'IA au service des personnes en situation de handicap
                     </h1>
                     <div className="flex flex-col gap-3">
@@ -27,8 +27,8 @@ export default function ConferencePage({ params }: { params: { id: string } }) {
 
                 <div className="flex flex-col xl:flex-row gap-16 xl:gap-24 items-start">
                     {/* Left: Speaker Section */}
-                    <div className="flex-grow flex flex-col lg:flex-row gap-10 lg:gap-16 items-start">
-                        <div className="relative w-full lg:w-[390px] h-[560px] rounded-[40px] overflow-hidden flex-shrink-0">
+                    <div className="grow flex flex-col lg:flex-row gap-10 lg:gap-16 items-start">
+                        <div className="relative w-full lg:w-[390px] h-[560px] rounded-[40px] overflow-hidden shrink-0">
                             <Image
                                 src="/images/gregory.png"
                                 alt="Grégory Nédélec"
@@ -57,7 +57,7 @@ export default function ConferencePage({ params }: { params: { id: string } }) {
                     </div>
 
                     {/* Right: Reservation Panel */}
-                    <aside className="w-full xl:w-[420px] bg-card-bg backdrop-blur-2xl rounded-[40px] py-10 px-12 flex-shrink-0">
+                    <aside className="w-full xl:w-[420px] bg-card-bg backdrop-blur-2xl rounded-[40px] py-10 px-12 shrink-0">
                         <div className="flex flex-col gap-9">
                             {/* Booking Section */}
                             <div>
