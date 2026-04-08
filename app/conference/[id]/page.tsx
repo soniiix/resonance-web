@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Star, ArrowLineUpRight, ShareFat, Circle, CheckCircle, ArrowBendUpRight, PlayCircle } from "@phosphor-icons/react/dist/ssr";
-import Navbar from "@/app/components/Navbar";
-import Footer from "@/app/components/Footer";
+import Navbar from "@/app/components/layout/Navbar";
+import Footer from "@/app/components/layout/Footer";
 
 export default function ConferencePage({ params }: { params: { id: string } }) {
     return (

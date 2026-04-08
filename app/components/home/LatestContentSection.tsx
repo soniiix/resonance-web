@@ -2,9 +2,9 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { MagnifyingGlass, DotsThreeVertical } from "@phosphor-icons/react/dist/ssr";
-import LiveCard from "./LiveCard";
-import PodcastCard from "./PodcastCard";
-import ArticleCard from "./ArticleCard";
+import LiveCard from "../cards/LiveCard";
+import PodcastCard from "../cards/PodcastCard";
+import ArticleCard from "../cards/ArticleCard";
 
 const categories = [
     "Santé",
