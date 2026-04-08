@@ -38,3 +38,21 @@
     /* ===== GRADIENTS ===== */
     --background-image-gradient-brand: linear-gradient(225deg, var(--color-pure-orange) -3.69%, var(--color-purple) 81.45%);
 }
+
+@layer utilities {
+    .border-gradient-brand {
+        background: linear-gradient(var(--color-card-bg), var(--color-card-bg)) padding-box,
+                    var(--background-image-gradient-brand) border-box;
+        border: 2px solid transparent;
+        border-radius: 9999px;
+    }
+
+    .text-gradient-brand {
+        background: var(--background-image-gradient-brand);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
+        display: inline-block;
+    }
+}

@@ -1,12 +1,20 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Star, ArrowLineUpRight, ShareNetwork, Circle, CheckCircle } from "@phosphor-icons/react/dist/ssr";
+import { Star, ArrowLineUpRight, ShareFat, Circle, CheckCircle, ArrowBendUpRight, PlayCircle } from "@phosphor-icons/react/dist/ssr";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
 
 export default function ConferencePage({ params }: { params: { id: string } }) {
     return (
         <div className="text-pure-white font-body">
+            <svg width="0" height="0" className="absolute">
+                <defs>
+                    <linearGradient id="brand-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="#ff7d00" />
+                        <stop offset="100%" stopColor="#a44ea6" />
+                    </linearGradient>
+                </defs>
+            </svg>
             <Navbar />
 
             <main className="max-w-container mx-auto px-8 pt-38 pb-32">
@@ -45,19 +53,19 @@ export default function ConferencePage({ params }: { params: { id: string } }) {
                                 Après avoir travaillé sur des problématiques liées au CRM en agence de communication, dans la formation en école de communication je me suis dirigé vers le digital. À travers mes expériences en tant que chef de projet web, j’ai pu avoir une vision large du métier et du secteur. Dans ce contexte, j’ai pu travailler sur des lancements de start-up. En parallèle, j’ai exercé et j’exerce encore le métier d’intervenant en école de communication. Je suis également formateur & consultant en stratégie digitale.
                             </p>
 
-                            <div className="flex items-center gap-8 mt-4">
-                                <button className="hover:scale-110 transition-transform cursor-pointer">
-                                    <Star weight="fill" className="text-pure-white w-10 h-10" />
+                            <div className="flex items-center gap-5 mt-4">
+                                <button className="cursor-pointer" title="Ajouter aux favoris">
+                                    <Star weight="fill" className="text-pure-white w-9 h-9" />
                                 </button>
-                                <button className="hover:scale-110 transition-transform cursor-pointer">
-                                    <ShareNetwork className="text-pure-orange w-10 h-10" />
+                                <button className="cursor-pointer" title="Partager">
+                                    <ShareFat className="w-10 h-10 -mb-1" style={{ fill: 'url(#brand-gradient)' }} />
                                 </button>
                             </div>
                         </div>
                     </div>
 
                     {/* Right: Reservation Panel */}
-                    <aside className="w-full xl:w-[420px] bg-card-bg backdrop-blur-2xl rounded-[40px] py-10 px-12 shrink-0">
+                    <aside className="w-full xl:w-[420px] bg-card-bg shadow-[0_4px_31px_-2px_rgba(0,0,0,0.38)] rounded-[40px] py-10 px-12 shrink-0">
                         <div className="flex flex-col gap-9">
                             {/* Booking Section */}
                             <div>
@@ -66,13 +74,13 @@ export default function ConferencePage({ params }: { params: { id: string } }) {
                                 </h3>
                                 <div className="flex flex-col gap-8">
                                     <label className="flex items-center gap-6 group cursor-pointer">
-                                        <div className="w-7 h-7 rounded-full border-2 border-pure-orange flex items-center justify-center p-1.5 group-hover:bg-pure-orange/20 transition-all">
-                                            <div className="w-3 h-3 rounded-full bg-pure-orange shadow-[0_0_15px_rgba(255,125,0,0.6)]" />
+                                        <div className="w-7 h-7 rounded-full border-gradient-brand flex items-center justify-center p-1.5 transition-all">
+                                            <div className="w-3 h-3 rounded-full bg-gradient-brand shadow-[0_0_15px_rgba(164,78,166,0.4)]" />
                                         </div>
                                         <span className="text-[19px] md:text-[19px] font-medium tracking-tight text-white">Pass Early</span>
                                     </label>
                                     <label className="flex items-center gap-6 group cursor-pointer opacity-70 hover:opacity-100 transition-opacity">
-                                        <div className="w-7 h-7 rounded-full border-2 border-white/30 flex items-center justify-center p-1.5 group-hover:border-white/50 transition-all" />
+                                        <div className="w-7 h-7 rounded-full border-gradient-brand flex items-center justify-center p-1.5 transition-all opacity-40 group-hover:opacity-100" />
                                         <span className="text-[19px] md:text-[19px] font-medium tracking-tight">Pass Classique</span>
                                     </label>
                                 </div>
@@ -84,13 +92,81 @@ export default function ConferencePage({ params }: { params: { id: string } }) {
                                     Voir le live
                                 </h3>
                                 <label className="flex items-center gap-6 group cursor-pointer opacity-70 hover:opacity-100 transition-opacity">
-                                    <div className="w-7 h-7 rounded-full border-2 border-white/30 flex items-center justify-center p-1.5 group-hover:border-white/50 transition-all" />
+                                    <div className="w-7 h-7 rounded-full border-gradient-brand flex items-center justify-center p-1.5 transition-all opacity-40 group-hover:opacity-100" />
                                     <span className="text-[19px] md:text-[19px] font-medium tracking-tight">Accéder au live</span>
                                 </label>
                             </div>
+
+                            <Link
+                                href="/"
+                                className="inline-flex items-center justify-center px-8 py-2.5 text-xl bg-pure-orange text-pure-white font-body font-semibold rounded-base hover:opacity-90 transition-opacity duration-200"
+                            >
+                                Acheter
+                            </Link>
                         </div>
                     </aside>
                 </div>
+
+                <h2 className="text-center mt-32 mb-12 flex flex-col items-center px-4">
+                    <span className="font-heading font-bold text-[32px] sm:text-4xl md:text-5xl lg:text-[60px] uppercase bg-gradient-brand text-transparent bg-clip-text md:mb-1 drop-shadow-sm">
+                        Écouter
+                    </span>
+                    <span className="text-pure-white font-heading font-bold text-[32px] sm:text-4xl md:text-5xl lg:text-[60px] leading-none uppercase mb-2 md:mb-4 drop-shadow-md">
+                        le podcast
+                    </span>
+                </h2>
+
+                <section className="flex flex-col lg:flex-row gap-10 items-start">
+                    {/* Left: Podcast Card */}
+                    <div className="w-full lg:w-[420px] shrink-0">
+                        <div className="bg-pure-white rounded-[40px] overflow-hidden shadow-2xl group cursor-pointer transition-transform hover:scale-[1.02]">
+                            <div className="relative aspect-4/3">
+                                <Image
+                                    src="/images/conference-1.png"
+                                    alt="Podcast"
+                                    fill
+                                    className="object-cover object-top"
+                                />
+                                <div className="absolute bottom-6 right-6">
+                                    <div className="bg-white/20 backdrop-blur-md rounded-full p-2.5">
+                                        <Star weight="fill" className="text-pure-white w-6 h-6" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="p-8 pb-10">
+                                <p className="font-bold text-black text-xl mb-1">Podcast</p>
+                                <p className="text-black/60 font-medium">20/04/2026 à 15:30 - 20m40s</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Right: Episode List */}
+                    <div className="grow flex flex-col gap-6 w-full">
+                        {[1, 2, 3].map((_, index) => (
+                            <div key={index} className="bg-card-bg rounded-[32px] p-8 pr-10 flex items-center justify-between group hover:bg-white/5 transition-colors cursor-pointer border border-white/5 shadow-lg">
+                                <div className="flex flex-col gap-2">
+                                    <h3 className="font-semibold text-2xl text-pure-white">
+                                        Nom de l'épisode du podcast
+                                    </h3>
+                                    <p className="text-alt-grey font-medium text-lg">
+                                        20/04/2026 à 15:30 - 20m40s
+                                    </p>
+                                </div>
+                                <div className="flex items-center gap-4">
+                                    <button title="Partager">
+                                        <ShareFat className="w-8 h-8 -mb-1" style={{ fill: 'url(#brand-gradient)' }} />
+                                    </button>
+                                    <button title="Ajouter aux favoris">
+                                        <Star weight="fill" className="text-pure-white w-8 h-8" />
+                                    </button>
+                                    <button title="Écouter">
+                                        <PlayCircle weight="fill" className="text-pure-white w-12 h-12" />
+                                    </button>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </section>
             </main>
 
             <Footer />
