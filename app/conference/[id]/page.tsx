@@ -168,6 +168,29 @@ export default function ConferencePage({ params }: { params: { id: string } }) {
                         ))}
                     </div>
                 </section>
+
+                {/* Integrated map */}
+                <h2 className="text-center mt-32 mb-12 flex flex-col items-center px-4">
+                    <span className="font-heading font-bold text-[32px] sm:text-4xl md:text-5xl lg:text-[60px] uppercase bg-gradient-brand text-transparent bg-clip-text md:mb-1 drop-shadow-sm">
+                        Venir
+                    </span>
+                    <span className="text-pure-white font-heading font-bold text-[32px] sm:text-4xl md:text-5xl lg:text-[60px] leading-none uppercase mb-2 md:mb-4 drop-shadow-md">
+                        à la conférence
+                    </span>
+                </h2>
+
+                <section className="w-full h-[600px] rounded-[40px] overflow-hidden shadow-2xl border border-white/10 mb-20">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2696.5332617757303!2d-0.5562767232!3d47.46950947117769!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x480878e90696e57f%3A0xe5f9b407425178bd!2sRue%20de%20l'Esvi%C3%A8re%2C%2049100%20Angers!5e0!3m2!1sfr!2sfr!4v1712565600000!5m2!1sfr!2sfr"
+                        width="100%"
+                        height="100%"
+                        style={{ border: 0 }}
+                        allowFullScreen
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                        className="grayscale-[0.2] contrast-[1.1]"
+                    />
+                </section>
             </main>
 
             <Footer />
