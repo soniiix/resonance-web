@@ -201,7 +201,7 @@ export default function ConferencePage({ params }: { params: { id: string } }) {
                     </span>
                 </h2>
 
-                <section className="flex flex-col lg:flex-row gap-8 items-stretch mb-20">
+                <section className="flex flex-col lg:flex-row gap-8 items-stretch mb-14">
                     {/* Left: Featured Replay */}
                     <div className="w-full lg:w-1/2 bg-card-bg rounded-[40px] overflow-hidden flex flex-col shadow-2xl">
                         <div className="relative grow min-h-[310px]">
