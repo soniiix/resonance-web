@@ -34,6 +34,7 @@ export default function PodcastCard({ title, image, episodes }: PodcastCardProps
                     fill
                     className="object-cover object-center scale-100 transition-transform duration-700 ease-out group-hover:scale-110"
                     sizes="(max-width: 768px) 350px, (max-width: 1024px) 400px, 420px"
+                    draggable="false"
                 />
                 {/* Gradient overlay for better text readability */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent top-[30%] z-10" />

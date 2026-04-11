@@ -113,30 +113,65 @@ const articles = [
 
 export default function LatestContentSection() {
     const [livesWidth, setLivesWidth] = useState(0);
+    const [podcastsWidth, setPodcastsWidth] = useState(0);
+    const [articlesWidth, setArticlesWidth] = useState(0);
+
     const livesCarouselRef = useRef<HTMLDivElement>(null);
+    const podcastsCarouselRef = useRef<HTMLDivElement>(null);
+    const articlesCarouselRef = useRef<HTMLDivElement>(null);
+
     const isDraggingLivesRef = useRef(false);
+    const isDraggingPodcastsRef = useRef(false);
+    const isDraggingArticlesRef = useRef(false);
 
     useEffect(() => {
-        const updateWidth = () => {
+        const updateWidths = () => {
             if (livesCarouselRef.current) {
                 setLivesWidth(livesCarouselRef.current.scrollWidth - livesCarouselRef.current.offsetWidth);
+            }
+            if (podcastsCarouselRef.current) {
+                setPodcastsWidth(podcastsCarouselRef.current.scrollWidth - podcastsCarouselRef.current.offsetWidth);
+            }
+            if (articlesCarouselRef.current) {
+                setArticlesWidth(articlesCarouselRef.current.scrollWidth - articlesCarouselRef.current.offsetWidth);
             }
         };
 
         // Initial calculation with a small delay to ensure layout
-        const timer = setTimeout(updateWidth, 100);
+        const timer = setTimeout(updateWidths, 150);
         
-        window.addEventListener("resize", updateWidth);
+        window.addEventListener("resize", updateWidths);
         return () => {
             clearTimeout(timer);
-            window.removeEventListener("resize", updateWidth);
+            window.removeEventListener("resize", updateWidths);
         };
     }, []);
 
+    // Handlers for Lives
     const handleDragStartLives = () => { isDraggingLivesRef.current = true; };
     const handleDragEndLives = () => { setTimeout(() => { isDraggingLivesRef.current = false; }, 50); };
     const handleClickCaptureLives = (e: React.MouseEvent) => {
         if (isDraggingLivesRef.current) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+    };
+
+    // Handlers for Podcasts
+    const handleDragStartPodcasts = () => { isDraggingPodcastsRef.current = true; };
+    const handleDragEndPodcasts = () => { setTimeout(() => { isDraggingPodcastsRef.current = false; }, 50); };
+    const handleClickCapturePodcasts = (e: React.MouseEvent) => {
+        if (isDraggingPodcastsRef.current) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+    };
+
+    // Handlers for Articles
+    const handleDragStartArticles = () => { isDraggingArticlesRef.current = true; };
+    const handleDragEndArticles = () => { setTimeout(() => { isDraggingArticlesRef.current = false; }, 50); };
+    const handleClickCaptureArticles = (e: React.MouseEvent) => {
+        if (isDraggingArticlesRef.current) {
             e.preventDefault();
             e.stopPropagation();
         }
@@ -227,24 +262,29 @@ export default function LatestContentSection() {
             </div>
 
             {/* Podcasts Cards Slider Container */}
-            <div className="relative z-10 w-full pl-6 md:pl-12 lg:pl-[max(3rem,calc((100vw-var(--max-width-container))/2+3rem))]">
-                <div
-                    className="flex overflow-x-auto gap-6 sm:gap-8 pb-12 snap-x snap-mandatory pt-4 pr-6 md:pr-12 w-full"
-                    style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+            <div className="relative z-10 w-full pl-6 md:pl-12 lg:pl-[max(3rem,calc((100vw-var(--max-width-container))/2+3rem))] overflow-hidden">
+                <motion.div
+                    ref={podcastsCarouselRef}
+                    className="cursor-grab active:cursor-grabbing pb-12"
                 >
-                    <style dangerouslySetInnerHTML={{
-                        __html: `div::-webkit-scrollbar { display: none; }`
-                    }} />
-
-                    {podcasts.map(podcast => (
-                        <PodcastCard
-                            key={podcast.id}
-                            title={podcast.title}
-                            image={podcast.image}
-                            episodes={podcast.episodes}
-                        />
-                    ))}
-                </div>
+                    <motion.div
+                        drag="x"
+                        dragConstraints={{ right: 0, left: -podcastsWidth }}
+                        onDragStart={handleDragStartPodcasts}
+                        onDragEnd={handleDragEndPodcasts}
+                        onClickCapture={handleClickCapturePodcasts}
+                        className="flex gap-6 sm:gap-8 pt-4 pr-6 md:pr-12"
+                    >
+                        {podcasts.map(podcast => (
+                            <PodcastCard
+                                key={podcast.id}
+                                title={podcast.title}
+                                image={podcast.image}
+                                episodes={podcast.episodes}
+                            />
+                        ))}
+                    </motion.div>
+                </motion.div>
             </div>
 
             {/* NOS ARTICLES Title */}
@@ -255,24 +295,29 @@ export default function LatestContentSection() {
             </div>
 
             {/* Articles Cards Slider Container */}
-            <div className="relative z-10 w-full pl-6 md:pl-12 lg:pl-[max(3rem,calc((100vw-var(--max-width-container))/2+3rem))] pb-20">
-                <div
-                    className="flex justify-center overflow-x-auto gap-6 sm:gap-8 pb-12 snap-x snap-mandatory pt-4 pr-6 md:pr-12 w-full"
-                    style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+            <div className="relative z-10 w-full pl-6 md:pl-12 lg:pl-[max(3rem,calc((100vw-var(--max-width-container))/2+3rem))] overflow-hidden pb-10 md:pb-20">
+                <motion.div
+                    ref={articlesCarouselRef}
+                    className="cursor-grab active:cursor-grabbing pb-12"
                 >
-                    <style dangerouslySetInnerHTML={{
-                        __html: `div::-webkit-scrollbar { display: none; }`
-                    }} />
-
-                    {articles.map(article => (
-                        <ArticleCard
-                            key={article.id}
-                            title={article.title}
-                            image={article.image}
-                            href={article.href}
-                        />
-                    ))}
-                </div>
+                    <motion.div
+                        drag="x"
+                        dragConstraints={{ right: 0, left: -articlesWidth }}
+                        onDragStart={handleDragStartArticles}
+                        onDragEnd={handleDragEndArticles}
+                        onClickCapture={handleClickCaptureArticles}
+                        className="flex gap-6 sm:gap-8 pt-4 pr-6 md:pr-12"
+                    >
+                        {articles.map(article => (
+                            <ArticleCard
+                                key={article.id}
+                                title={article.title}
+                                image={article.image}
+                                href={article.href}
+                            />
+                        ))}
+                    </motion.div>
+                </motion.div>
             </div>
         </section>
     );

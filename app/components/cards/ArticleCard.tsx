@@ -19,6 +19,7 @@ export default function ArticleCard({ title, image, href }: ArticleCardProps) {
                     fill
                     className="object-cover object-center scale-100 transition-transform duration-700 ease-out group-hover:scale-110"
                     sizes="(max-width: 768px) 350px, (max-width: 1024px) 400px, 420px"
+                    draggable="false"
                 />
                 {/* Gradient overlay for better text readability */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1b101b] via-[#291C29]/60 to-transparent top-[30%] z-10" />
@@ -36,6 +37,7 @@ export default function ArticleCard({ title, image, href }: ArticleCardProps) {
                 <Link
                     href={href}
                     className="w-[70%] md:w-[65%] inline-flex items-center justify-center px-6 py-2.5 text-lg md:text-xl bg-pure-orange text-pure-white font-body font-semibold rounded-base hover:bg-pure-orange/95 transition-colors duration-200"
+                    draggable="false"
                 >
                     Lire l'article
                 </Link>
