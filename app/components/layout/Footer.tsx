@@ -29,7 +29,7 @@ export default function Footer() {
                     <div className="flex flex-col gap-6">
                         <h3 className="font-heading font-bold text-xl uppercase tracking-wider text-alt-orange">Navigation</h3>
                         <nav className="flex flex-col gap-4 font-body text-lg">
-                            <Link href="/contenus" className="hover:text-pure-white text-white/80 transition-colors inline-block w-fit">Nos contenus</Link>
+                            <Link href="/nos-contenus" className="hover:text-pure-white text-white/80 transition-colors inline-block w-fit">Nos contenus</Link>
                             <Link href="/conferencier" className="hover:text-pure-white text-white/80 transition-colors inline-block w-fit">Intervenants</Link>
                             <Link href="/besoin-conference" className="hover:text-pure-white text-white/80 transition-colors inline-block w-fit">Organisation d'événements</Link>
                             <Link href="/a-propos" className="hover:text-pure-white text-white/80 transition-colors inline-block w-fit">À propos</Link>

@@ -19,7 +19,7 @@ export default function Navbar() {
                     </Link>
                     <div className="hidden md:flex items-center gap-8">
                         <Link
-                            href="/contenus"
+                            href="/nos-contenus"
                             className="relative group text-pure-white font-medium text-xl hover:text-light-orange transition-colors duration-200 after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-light-orange after:transition-all after:duration-300 hover:after:w-full"
                         >
                             Nos contenus
