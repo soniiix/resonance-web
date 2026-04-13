@@ -9,9 +9,10 @@ interface LoginModalProps {
     isOpen: boolean;
     onClose: () => void;
     onOpenRegister: () => void;
+    onLoginSuccess: () => void;
 }
 
-export default function LoginModal({ isOpen, onClose, onOpenRegister }: LoginModalProps) {
+export default function LoginModal({ isOpen, onClose, onOpenRegister, onLoginSuccess }: LoginModalProps) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
@@ -63,6 +64,7 @@ export default function LoginModal({ isOpen, onClose, onOpenRegister }: LoginMod
             }
 
             localStorage.setItem("token", data.token);
+            onLoginSuccess();
             onClose();
         } catch (error) {
             console.log(error);
