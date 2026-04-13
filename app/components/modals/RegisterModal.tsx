@@ -149,7 +149,7 @@ export default function RegisterModal({ isOpen, onClose }: RegisterModalProps) {
 
                 <button
                     type="submit"
-                    className="w-full bg-pure-orange hover:bg-pure-orange/90 text-white font-semibold py-4 rounded-xl transition-all duration-300 shadow-lg shadow-pure-orange/20 cursor-pointer text-lg mt-4"
+                    className="w-full bg-pure-orange hover:bg-pure-orange/90 text-white font-semibold py-4 rounded-xl transition-all duration-300 cursor-pointer mt-4"
                 >
                     Je crée mon compte
                 </button>
