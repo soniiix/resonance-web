@@ -1,9 +1,9 @@
 "use client";
 
-import { X } from "@phosphor-icons/react";
+import { X, CircleNotch } from "@phosphor-icons/react";
 import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 interface LoginModalProps {
     isOpen: boolean;
@@ -12,6 +12,11 @@ interface LoginModalProps {
 }
 
 export default function LoginModal({ isOpen, onClose, onOpenRegister }: LoginModalProps) {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [error, setError] = useState("");
+    const [isLoading, setIsLoading] = useState(false);
+
     // Prevent scrolling when modal is open
     useEffect(() => {
         if (isOpen) {
@@ -23,6 +28,49 @@ export default function LoginModal({ isOpen, onClose, onOpenRegister }: LoginMod
             document.body.style.overflow = "unset";
         };
     }, [isOpen]);
+
+    // Reset form state when modal opens/closes
+    useEffect(() => {
+        if (!isOpen) {
+            setEmail("");
+            setPassword("");
+            setError("");
+            setIsLoading(false);
+        }
+    }, [isOpen]);
+
+    const handleLogin = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setError("");
+        setIsLoading(true);
+
+        try {
+            const res = await fetch("http://localhost:8000/api/login", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email, password }),
+            });
+
+            const data = await res.json();
+
+            if (!res.ok) {
+                if (data.message == "Invalid credentials.") {
+                    setError("Identifiants incorrects");
+                } else {
+                    setError(data.message);
+                }
+                return;
+            }
+
+            localStorage.setItem("token", data.token);
+            onClose();
+        } catch (error) {
+            console.log(error);
+            setError("Impossible de se connecter au serveur");
+        } finally {
+            setIsLoading(false);
+        }
+    };
 
     return (
         <AnimatePresence>
@@ -69,8 +117,19 @@ export default function LoginModal({ isOpen, onClose, onOpenRegister }: LoginMod
                                 SE CONNECTER
                             </h2>
 
+                            {/* Error Message */}
+                            {error && (
+                                <motion.div
+                                    initial={{ opacity: 0, y: -10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    className="w-full mb-4 px-4 py-3 rounded-xl bg-red-500/15 border border-red-500/30 text-red-400 text-sm text-center"
+                                >
+                                    {error}
+                                </motion.div>
+                            )}
+
                             {/* Form */}
-                            <form className="w-full space-y-5" onSubmit={(e) => e.preventDefault()}>
+                            <form className="w-full space-y-5" onSubmit={handleLogin}>
                                 {/* Email Field */}
                                 <div className="space-y-2">
                                     <label className="block">
@@ -78,7 +137,10 @@ export default function LoginModal({ isOpen, onClose, onOpenRegister }: LoginMod
                                     </label>
                                     <input
                                         type="email"
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
                                         placeholder="mon@email.fr"
+                                        required
                                         className="w-full bg-dark-purple border border-white/20 rounded-xl px-4 py-3.5 text-white placeholder:text-white/20 focus:outline-none focus:border-pure-orange transition-colors"
                                     />
                                 </div>
@@ -90,9 +152,28 @@ export default function LoginModal({ isOpen, onClose, onOpenRegister }: LoginMod
                                     </label>
                                     <input
                                         type="password"
+                                        value={password}
+                                        onChange={(e) => setPassword(e.target.value)}
+                                        required
                                         className="w-full bg-dark-purple border border-white/20 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-pure-orange transition-colors"
                                     />
                                 </div>
+
+                                {/* Submit Button */}
+                                <button
+                                    type="submit"
+                                    disabled={isLoading}
+                                    className="w-full bg-white/10 hover:bg-white/15 disabled:opacity-50 disabled:cursor-not-allowed text-white font-semibold py-4 rounded-xl transition-all duration-300 uppercase tracking-wide cursor-pointer flex items-center justify-center gap-2"
+                                >
+                                    {isLoading ? (
+                                        <>
+                                            <CircleNotch size={20} className="animate-spin" />
+                                            Connexion...
+                                        </>
+                                    ) : (
+                                        "Se connecter"
+                                    )}
+                                </button>
 
                                 {/* Separator */}
                                 <div className="flex items-center gap-4 py-4">
