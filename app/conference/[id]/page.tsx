@@ -98,7 +98,7 @@ export default function ConferencePage({ params }: { params: { id: string } }) {
                             </div>
 
                             <Link
-                                href="/"
+                                href="/en-construction"
                                 className="inline-flex items-center justify-center px-8 py-2.5 text-xl bg-pure-orange text-pure-white font-body font-semibold rounded-base hover:opacity-90 transition-opacity duration-200"
                             >
                                 Acheter
@@ -227,7 +227,7 @@ export default function ConferencePage({ params }: { params: { id: string } }) {
                                 </p>
                             </div>
                             <Link
-                                href="/"
+                                href="/en-construction"
                                 className="inline-flex items-center justify-center px-18 py-2.5 text-xl bg-pure-orange text-pure-white font-body font-semibold rounded-base hover:opacity-90 transition-opacity duration-200"
                             >
                                 Visionner

@@ -30,9 +30,9 @@ export default function Footer() {
                         <h3 className="font-heading font-bold text-xl uppercase tracking-wider text-alt-orange">Navigation</h3>
                         <nav className="flex flex-col gap-4 font-body text-lg">
                             <Link href="/nos-contenus" className="hover:text-pure-white text-white/80 transition-colors inline-block w-fit">Nos contenus</Link>
-                            <Link href="/conferencier" className="hover:text-pure-white text-white/80 transition-colors inline-block w-fit">Intervenants</Link>
-                            <Link href="/besoin-conference" className="hover:text-pure-white text-white/80 transition-colors inline-block w-fit">Organisation d'événements</Link>
-                            <Link href="/a-propos" className="hover:text-pure-white text-white/80 transition-colors inline-block w-fit">À propos</Link>
+                            <Link href="/en-construction" className="hover:text-pure-white text-white/80 transition-colors inline-block w-fit">Intervenants</Link>
+                            <Link href="/en-construction" className="hover:text-pure-white text-white/80 transition-colors inline-block w-fit">Organisation d'événements</Link>
+                            <Link href="/en-construction" className="hover:text-pure-white text-white/80 transition-colors inline-block w-fit">À propos</Link>
                         </nav>
                     </div>
 
@@ -65,10 +65,10 @@ export default function Footer() {
                     <div className="flex flex-col gap-6">
                         <h3 className="font-heading font-bold text-xl uppercase tracking-wider text-alt-orange">Juridique</h3>
                         <nav className="flex flex-col gap-4 font-body text-lg text-white/70">
-                            <Link href="/mentions-legales" className="hover:text-pure-white transition-colors">Mentions Légales</Link>
-                            <Link href="/privacy" className="hover:text-pure-white transition-colors">Politique de confidentialité</Link>
-                            <Link href="/cookies" className="hover:text-pure-white transition-colors">Gestion des Cookies</Link>
-                            <Link href="/cgu" className="hover:text-pure-white transition-colors">CGU</Link>
+                            <Link href="/en-construction" className="hover:text-pure-white transition-colors">Mentions Légales</Link>
+                            <Link href="/en-construction" className="hover:text-pure-white transition-colors">Politique de confidentialité</Link>
+                            <Link href="/en-construction" className="hover:text-pure-white transition-colors">Gestion des Cookies</Link>
+                            <Link href="/en-construction" className="hover:text-pure-white transition-colors">CGU</Link>
                         </nav>
                     </div>
                 </div>

@@ -13,7 +13,7 @@ export default function LiveCard({ title, intervenant, image }: LiveCardProps) {
         <div className="flex flex-col bg-card-bg rounded-[20px] overflow-hidden w-[350px] md:w-[400px] lg:w-[420px] flex-shrink-0 snap-center border border-pure-white/5 hover:border-pure-white/10 transition-all duration-300 shadow-xl">
             {/* Image section */}
             <Link
-                href="/"
+                href="/en-construction"
                 className="relative w-full h-[220px] md:h-[250px] lg:h-[270px] overflow-hidden group"
                 draggable="false"
             >
@@ -36,8 +36,8 @@ export default function LiveCard({ title, intervenant, image }: LiveCardProps) {
             {/* Content section */}
             <div className="flex flex-col flex-grow p-6 lg:p-8">
                 <Link
-                   href="/"
-                   draggable="false"
+                    href="/en-construction"
+                    draggable="false"
                 >
                     <h4 className="text-pure-white font-semibold text-[18px] lg:text-[20px] leading-snug mb-6 transition-colors duration-300 hover:text-light-orange">
                         {title}
@@ -50,7 +50,7 @@ export default function LiveCard({ title, intervenant, image }: LiveCardProps) {
 
                 <div className="mt-auto flex justify-center pt-2">
                     <Link
-                        href="/"
+                        href="/en-construction"
                         className="w-[60%] inline-flex items-center justify-center px-8 py-2.5 text-xl bg-pure-orange text-pure-white font-body font-semibold rounded-base hover:bg-pure-orange/95 transition-colors duration-200"
                         draggable="false"
                     >

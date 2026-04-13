@@ -33,13 +33,13 @@ export default function Navbar() {
                                 Nos contenus
                             </Link>
                             <Link
-                                href="/conferencier"
+                                href="/en-construction"
                                 className="relative group text-pure-white font-medium text-xl hover:text-light-orange transition-colors duration-200 after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-light-orange after:transition-all after:duration-300 hover:after:w-full"
                             >
                                 Conférencier
                             </Link>
                             <Link
-                                href="/besoin-conference"
+                                href="/en-construction"
                                 className="relative group text-pure-white font-medium text-xl hover:text-light-orange transition-colors duration-200 after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-light-orange after:transition-all after:duration-300 hover:after:w-full"
                             >
                                 Besoin d'une conférence
@@ -50,7 +50,7 @@ export default function Navbar() {
                     {/* Right: About + User Icon */}
                     <div className="hidden md:flex items-center gap-6">
                         <Link
-                            href="/a-propos"
+                            href="/en-construction"
                             className="relative group text-pure-white font-medium text-xl hover:text-light-orange transition-colors duration-200 after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-light-orange after:transition-all after:duration-300 hover:after:w-full"
                         >
                             À propos

@@ -37,7 +37,7 @@ export default function LatestNewsSection() {
                                 </p>
                             </div>
                             <Link
-                                href="/"
+                                href="/en-construction"
                                 className="inline-flex items-center justify-center px-18 py-2.5 text-xl bg-pure-orange text-pure-white font-body font-semibold rounded-base hover:opacity-90 transition-opacity duration-200"
                             >
                                 Visionner
@@ -48,7 +48,7 @@ export default function LatestNewsSection() {
                     {/* Right: Secondary Replays */}
                     <div className="w-full lg:w-1/2 flex flex-col gap-6">
                         {[1, 2].map((_, index) => (
-                            <Link key={index} href="/" className="bg-card-bg rounded-[40px] p-5 pr-10 flex items-center gap-8 group hover:bg-white/5 transition-all shadow-xl">
+                            <Link key={index} href="/en-construction" className="bg-card-bg rounded-[40px] p-5 pr-10 flex items-center gap-8 group hover:bg-white/5 transition-all shadow-xl">
                                 <div className="relative w-48 h-32 md:w-64 md:h-48 rounded-3xl overflow-hidden shrink-0">
                                     <Image
                                         src={`/images/live-${index + 1}.png`}
