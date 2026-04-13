@@ -5,9 +5,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import LoginModal from "../modals/LoginModal";
+import RegisterModal from "../modals/RegisterModal";
 
 export default function Navbar() {
     const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+    const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
 
     return (
         <>
@@ -68,8 +70,18 @@ export default function Navbar() {
             <LoginModal
                 isOpen={isLoginModalOpen}
                 onClose={() => setIsLoginModalOpen(false)}
+                onOpenRegister={() => {
+                    setIsLoginModalOpen(false);
+                    setIsRegisterModalOpen(true);
+                }}
+            />
+
+            <RegisterModal
+                isOpen={isRegisterModalOpen}
+                onClose={() => setIsRegisterModalOpen(false)}
             />
         </>
     );
 }
+
 

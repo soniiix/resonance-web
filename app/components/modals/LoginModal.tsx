@@ -8,9 +8,10 @@ import { useEffect } from "react";
 interface LoginModalProps {
     isOpen: boolean;
     onClose: () => void;
+    onOpenRegister: () => void;
 }
 
-export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
+export default function LoginModal({ isOpen, onClose, onOpenRegister }: LoginModalProps) {
     // Prevent scrolling when modal is open
     useEffect(() => {
         if (isOpen) {
@@ -101,7 +102,11 @@ export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
                                 </div>
 
                                 {/* Sign Up Button */}
-                                <button className="w-full bg-pure-orange hover:bg-pure-orange/90 text-white font-semibold py-4 rounded-xl transition-all duration-300 shadow-lg shadow-pure-orange/20 uppercase tracking-wide cursor-pointer">
+                                <button
+                                    type="button"
+                                    onClick={onOpenRegister}
+                                    className="w-full bg-pure-orange hover:bg-pure-orange/90 text-white font-semibold py-4 rounded-xl transition-all duration-300 shadow-lg shadow-pure-orange/20 uppercase tracking-wide cursor-pointer"
+                                >
                                     s'inscrire
                                 </button>
                             </form>
