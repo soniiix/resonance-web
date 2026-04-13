@@ -65,7 +65,7 @@ export default function ArticlesSlider({ title, articles }: ArticlesSliderProps)
                         onDragStart={handleDragStart}
                         onDragEnd={handleDragEnd}
                         onClickCapture={handleClickCapture}
-                        className="flex gap-6 sm:gap-8 pt-4 pr-6 md:pr-12"
+                        className="flex gap-6 items-center justify-center sm:gap-8 pt-4 pr-6 md:pr-12"
                     >
                         {articles.map(article => (
                             <ArticleCard
