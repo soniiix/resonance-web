@@ -9,15 +9,14 @@ import RegisterModal from "../modals/RegisterModal";
 export default function HeroSection() {
     const [isRegisterOpen, setIsRegisterOpen] = useState(false);
 
-    const line1 = "DES CONFÉRENCES".split(" ");
-    const line2 = "QUI ONT DU SENS".split(" ");
+
 
     const containerVariants: Variants = {
         hidden: { opacity: 0 },
         visible: {
             opacity: 1,
             transition: {
-                staggerChildren: 0.06,
+                staggerChildren: 0.25,
             },
         },
     };
@@ -40,7 +39,7 @@ export default function HeroSection() {
             opacity: 1,
             transition: {
                 staggerChildren: 0.1,
-                delayChildren: 0.6,
+                delayChildren: 0.45,
             },
         },
     };
@@ -75,20 +74,12 @@ export default function HeroSection() {
                             animate="visible"
                             className="font-heading text-5xl md:text-6xl lg:text-7xl font-extrabold text-pure-white uppercase leading-tight"
                         >
-                            <div className="-mb-4">
-                                {line1.map((word, i) => (
-                                    <motion.span key={i} variants={itemVariants} className="inline-block mr-[0.3em]">
-                                        {word}
-                                    </motion.span>
-                                ))}
-                            </div>
-                            <div>
-                                {line2.map((word, i) => (
-                                    <motion.span key={i} variants={itemVariants} className="inline-block mr-[0.3em]">
-                                        {word}
-                                    </motion.span>
-                                ))}
-                            </div>
+                            <motion.div variants={itemVariants} className="-mb-4">
+                                DES CONFÉRENCES
+                            </motion.div>
+                            <motion.div variants={itemVariants}>
+                                QUI ONT DU SENS
+                            </motion.div>
                         </motion.h1>
 
                         <motion.div
