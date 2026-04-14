@@ -17,9 +17,40 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-    title: "Résonance - Des conférences qui ont du sens",
-    description:
-        "Résonance organise des conférences de qualité à taille humaine, dans des lieux atypiques, avec des intervenants au parcours riche et authentique.",
+    title: {
+        default: "Résonance - Des conférences qui ont du sens",
+        template: "%s | Résonance"
+    },
+    description: "Résonance organise des conférences de qualité à taille humaine, dans des lieux atypiques, avec des intervenants au parcours riche et authentique.",
+    keywords: ["conférence", "Angers", "développement personnel", "inspiration", "rencontre"],
+    authors: [{ name: "Résonance" }],
+    creator: "Résonance",
+    openGraph: {
+        type: "website",
+        locale: "fr_FR",
+        url: "https://resonance-v1.vercel.app",
+        siteName: "Résonance",
+        title: "Résonance - Des conférences qui ont du sens",
+        description: "Découvrez des conférences authentiques dans des lieux atypiques.",
+        images: [
+            {
+                url: "/images/site-preview.png",
+                width: 1200,
+                height: 630,
+                alt: "Résonance - Des conférences qui ont du sens",
+            },
+        ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Résonance - Des conférences qui ont du sens",
+        description: "Découvrez des conférences authentiques dans des lieux atypiques.",
+        images: ["/images/site-preview.png"],
+    },
+    robots: {
+        index: true,
+        follow: true,
+    },
 };
 
 export default function RootLayout({
