@@ -1,5 +1,6 @@
 "use client";
 
+import { motion, Variants } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -7,6 +8,42 @@ import RegisterModal from "../modals/RegisterModal";
 
 export default function HeroSection() {
     const [isRegisterOpen, setIsRegisterOpen] = useState(false);
+
+    const line1 = "DES CONFÉRENCES".split(" ");
+    const line2 = "QUI ONT DU SENS".split(" ");
+
+    const containerVariants: Variants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.06,
+            },
+        },
+    };
+
+    const itemVariants: Variants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 0.3,
+                ease: "easeOut",
+            },
+        },
+    };
+
+    const buttonContainerVariants: Variants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.1,
+                delayChildren: 0.6,
+            },
+        },
+    };
 
     return (
         <>
@@ -32,25 +69,51 @@ export default function HeroSection() {
                 {/* Content */}
                 <div className="relative z-10 h-full flex items-center px-8">
                     <div className="max-w-container mx-auto w-full">
-                        <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl font-extrabold text-pure-white uppercase leading-tight">
-                            <div className="-mb-4">DES CONFÉRENCES</div>
-                            <div>QUI ONT DU SENS</div>
-                        </h1>
+                        <motion.h1
+                            variants={containerVariants}
+                            initial="hidden"
+                            animate="visible"
+                            className="font-heading text-5xl md:text-6xl lg:text-7xl font-extrabold text-pure-white uppercase leading-tight"
+                        >
+                            <div className="-mb-4">
+                                {line1.map((word, i) => (
+                                    <motion.span key={i} variants={itemVariants} className="inline-block mr-[0.3em]">
+                                        {word}
+                                    </motion.span>
+                                ))}
+                            </div>
+                            <div>
+                                {line2.map((word, i) => (
+                                    <motion.span key={i} variants={itemVariants} className="inline-block mr-[0.3em]">
+                                        {word}
+                                    </motion.span>
+                                ))}
+                            </div>
+                        </motion.h1>
 
-                        <div className="flex flex-wrap items-center gap-4 mt-5">
-                            <button
-                                onClick={() => setIsRegisterOpen(true)}
-                                className="inline-flex items-center justify-center px-8 py-2.5 text-xl bg-pure-orange text-pure-white font-body font-semibold rounded-base hover:bg-pure-orange/95 transition-colors duration-200 cursor-pointer"
-                            >
-                                Rejoindre l'expérience
-                            </button>
-                            <Link
-                                href="/en-construction"
-                                className="inline-flex items-center justify-center px-8 py-2.5 text-xl bg-pure-white text-pure-orange font-body font-semibold rounded-base hover:bg-cool-white transition-colors duration-200"
-                            >
-                                Besoin d'une conférence
-                            </Link>
-                        </div>
+                        <motion.div
+                            variants={buttonContainerVariants}
+                            initial="hidden"
+                            animate="visible"
+                            className="flex flex-wrap items-center gap-4 mt-5"
+                        >
+                            <motion.div variants={itemVariants}>
+                                <button
+                                    onClick={() => setIsRegisterOpen(true)}
+                                    className="inline-flex items-center justify-center px-8 py-2.5 text-xl bg-pure-orange text-pure-white font-body font-semibold rounded-base hover:bg-pure-orange/95 transition-colors duration-200 cursor-pointer"
+                                >
+                                    Rejoindre l'expérience
+                                </button>
+                            </motion.div>
+                            <motion.div variants={itemVariants}>
+                                <Link
+                                    href="/en-construction"
+                                    className="inline-flex items-center justify-center px-8 py-2.5 text-xl bg-pure-white text-pure-orange font-body font-semibold rounded-base hover:bg-cool-white transition-colors duration-200"
+                                >
+                                    Besoin d'une conférence
+                                </Link>
+                            </motion.div>
+                        </motion.div>
                     </div>
                 </div>
             </section>
