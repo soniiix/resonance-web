@@ -30,9 +30,14 @@ export default function LoginModal({ isOpen, onClose, onOpenRegister, onLoginSuc
         };
     }, [isOpen]);
 
-    // Reset form state when modal opens/closes
+    // Reset form state when modal opens/closes and load saved email
     useEffect(() => {
-        if (!isOpen) {
+        if (isOpen) {
+            const savedEmail = localStorage.getItem("remembered_email");
+            if (savedEmail) {
+                setEmail(savedEmail);
+            }
+        } else {
             setEmail("");
             setPassword("");
             setError("");
@@ -46,7 +51,7 @@ export default function LoginModal({ isOpen, onClose, onOpenRegister, onLoginSuc
         setIsLoading(true);
 
         try {
-            const res = await fetch("http://localhost:8000/api/login", {
+            const res = await fetch("http://78.138.58.74:8080/api/login", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email, password }),
@@ -64,6 +69,7 @@ export default function LoginModal({ isOpen, onClose, onOpenRegister, onLoginSuc
             }
 
             localStorage.setItem("token", data.token);
+            localStorage.setItem("remembered_email", email);
             onLoginSuccess();
             onClose();
         } catch (error) {
