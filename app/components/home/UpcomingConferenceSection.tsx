@@ -90,7 +90,7 @@ export default function UpcomingConferenceSection() {
                     <h3 className="text-pure-white font-heading font-bold text-[32px] sm:text-4xl md:text-5xl lg:text-[60px] leading-none uppercase mb-2 md:mb-4 drop-shadow-md">
                         Conférences & Lives
                     </h3>
-                    <p className="text-pure-white font-heading font-bold md:text-lg lg:text-xl tracking-wide drop-shadow-md">
+                    <p className="text-pure-white font-medium md:text-lg lg:text-xl tracking-wide drop-shadow-md">
                         Le thème du mois : l'IA dans notre quotidien
                     </p>
                 </div>

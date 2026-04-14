@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { InstagramLogo, LinkedinLogo, YoutubeLogo, TwitterLogo, MapPin, EnvelopeSimple, Phone } from "@phosphor-icons/react/dist/ssr";
+import { InstagramLogo, LinkedinLogo, YoutubeLogo, XLogo, MapPin, EnvelopeSimple, Phone } from "@phosphor-icons/react/dist/ssr";
 
 export default function Footer() {
     return (
@@ -81,22 +81,30 @@ export default function Footer() {
 
                     {/* Social Icons */}
                     <div className="flex items-center gap-6">
-                        <a href="#" className="p-3 bg-white/5 hover:bg-pure-orange rounded-full transition-all duration-300 border border-white/10">
+                        <a
+                            href="https://www.instagram.com/resonance.angers/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="p-3 bg-white/5 hover:bg-pure-orange rounded-full transition-all duration-300 border border-white/10">
                             <InstagramLogo size={24} weight="regular" />
                         </a>
-                        <a href="#" className="p-3 bg-white/5 hover:bg-pure-orange rounded-full transition-all duration-300 border border-white/10">
+                        <a
+                            href="https://www.linkedin.com/company/resonance-angers/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="p-3 bg-white/5 hover:bg-pure-orange rounded-full transition-all duration-300 border border-white/10">
                             <LinkedinLogo size={24} weight="regular" />
                         </a>
                         <a href="#" className="p-3 bg-white/5 hover:bg-pure-orange rounded-full transition-all duration-300 border border-white/10">
                             <YoutubeLogo size={24} weight="regular" />
                         </a>
                         <a href="#" className="p-3 bg-white/5 hover:bg-pure-orange rounded-full transition-all duration-300 border border-white/10">
-                            <TwitterLogo size={24} weight="regular" />
+                            <XLogo size={24} weight="regular" />
                         </a>
                     </div>
 
                     <p className="font-body text-white/50 text-base flex items-center gap-2">
-                        Créé avec passion à Angers ✨
+                        Créé avec passion à Angers.
                     </p>
                 </div>
             </div>

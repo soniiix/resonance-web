@@ -1,4 +1,5 @@
 import { Star } from "@phosphor-icons/react/dist/ssr";
+import Link from "next/link";
 
 const reviews = [
     {
@@ -47,11 +48,8 @@ export default function ReviewSection() {
                         {/* Header of card: User info + Stars */}
                         <div className="flex justify-between items-start mb-8 gap-4">
                             <div className="flex flex-col">
-                                <span className="text-pure-white font-semibold text-[16px] md:text-[18px] lg:text-[20px] leading-tight">
-                                    {rev.name}
-                                </span>
-                                <span className="text-pure-white font-semibold text-[16px] md:text-[18px] lg:text-[20px] leading-tight opacity-90">
-                                    {rev.lastName}
+                                <span className="text-pure-white font-medium text-[16px] md:text-[18px] lg:text-[20px] leading-tight">
+                                    {rev.name} {rev.lastName}
                                 </span>
                             </div>
                             <div className="flex gap-0.5 mt-1">
@@ -59,7 +57,7 @@ export default function ReviewSection() {
                                     <Star
                                         key={i}
                                         weight="fill"
-                                        className="text-pure-white w-5 h-5 md:w-6 md:h-6 drop-shadow-md"
+                                        className="text-pure-white w-5 h-5 md:w-6 md:h-6"
                                     />
                                 ))}
                             </div>
@@ -74,9 +72,9 @@ export default function ReviewSection() {
 
                         {/* Read more button at bottom right */}
                         <div className="text-right mt-4">
-                            <button className="text-pure-white/80 hover:text-pure-white transition-colors text-[15px] md:text-[16px] font-body font-medium hover:underline decoration-1 underline-offset-4 cursor-pointer">
+                            <Link href="/en-construction" className="text-pure-white/80 hover:text-pure-white transition-colors text-[15px] md:text-[16px] font-body font-medium hover:underline decoration-1 underline-offset-4 cursor-pointer">
                                 Lire la suite
-                            </button>
+                            </Link>
                         </div>
                     </div>
                 ))}

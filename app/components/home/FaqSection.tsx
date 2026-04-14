@@ -47,7 +47,7 @@ export default function FaqSection() {
                                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
                                 className="w-full bg-cool-white rounded-full py-4 md:py-6 px-10 md:px-14 flex justify-between items-center cursor-pointer shadow-[0_10px_30px_rgba(0,0,0,0.2)] hover:bg-cool-white/95 transition-all duration-300 z-20 relative"
                             >
-                                <span className="text-black font-body font-bold text-[16px] md:text-[18px] lg:text-[20px] text-left">
+                                <span className="text-black font-body font-semibold text-[16px] md:text-[18px] lg:text-[20px] text-left">
                                     {item.question}
                                 </span>
                                 <div className={`flex items-center justify-center w-8 h-8 rounded-full bg-black/5 transition-transform duration-300 ${openIndex === index ? 'rotate-180' : ''}`}>

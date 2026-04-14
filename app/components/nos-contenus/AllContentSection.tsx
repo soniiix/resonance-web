@@ -28,12 +28,12 @@ export default function AllContentSection() {
                     <input
                         type="text"
                         placeholder="Rechercher un podcast, un replay, un contenu"
-                        className="w-full py-4 md:py-5 pl-8 pr-[100px] rounded-full text-black font-body text-[15px] outline-none shadow-[0_0_20px_rgba(255,125,0,0.15)] bg-pure-white placeholder-[#555] focus:ring-2 focus:ring-pure-orange transition-shadow duration-300"
+                        className="w-full py-4 md:py-4.5 pl-8 pr-[100px] rounded-full text-black font-body text-[15px] outline-none shadow-[0_0_20px_rgba(255,125,0,0.15)] bg-pure-white placeholder-[#555] focus:ring-2 focus:ring-pure-orange transition-shadow duration-300"
                     />
                     <div className="absolute right-6 top-1/2 -translate-y-1/2 flex items-center h-full py-3">
                         <div className="h-full w-px bg-gradient-brand mr-4 opacity-50" />
                         <button className="text-[#a44ea6] hover:text-pure-orange transition-colors duration-300 group hover:cursor-pointer">
-                            <MagnifyingGlass weight="regular" className="w-[28px] h-[28px] text-pure-orange transform group-hover:scale-110 transition-transform duration-300" />
+                            <MagnifyingGlass weight="regular" className="w-[28px] h-[28px] text-pure-orange transition-transform duration-300" />
                         </button>
                     </div>
                 </div>
@@ -43,7 +43,7 @@ export default function AllContentSection() {
                     {categories.map((cat, index) => (
                         <button
                             key={index}
-                            className="bg-pure-white shadow-lg bg-opacity-100 hover:shadow-xl px-8 py-2 rounded-base transition-transform duration-300 transform hover:cursor-pointer"
+                            className="bg-pure-white shadow-lg bg-opacity-100 hover:shadow-xl px-7.5 py-2 rounded-base transition-transform duration-300 transform hover:cursor-pointer"
                         >
                             <span className="font-regular text-[15px] tracking-wide text-transparent bg-clip-text bg-gradient-brand">
                                 {cat}
