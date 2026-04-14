@@ -171,10 +171,12 @@ export default function EspacePersonnel() {
 
                                     {/* Gérer mon abonnement */}
                                     <div>
-                                        <button className="group flex items-center justify-between w-full hover:cursor-pointer">
+                                        <Link
+                                            href="/en-construction"
+                                            className="group flex items-center justify-between w-full hover:cursor-pointer">
                                             <span className="text-xl font-semibold text-white group-hover:text-pure-orange transition-colors">Gérer mon abonnement</span>
                                             <CaretRight size={20} weight="bold" className="text-pure-orange" />
-                                        </button>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>

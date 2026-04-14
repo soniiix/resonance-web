@@ -87,18 +87,18 @@ export const articles = [
         id: 1,
         title: "L'IA au service des personnes en situation d'handicap",
         image: "/images/article-1.png",
-        href: "/"
+        href: "/en-construction"
     },
     {
         id: 2,
         title: "L'IA au service des personnes en situation d'handicap",
         image: "/images/article-2.png",
-        href: "/"
+        href: "/en-construction"
     },
     {
         id: 3,
         title: "L'IA au service des personnes en situation d'handicap",
         image: "/images/article-3.png",
-        href: "/"
+        href: "/en-construction"
     }
 ];
