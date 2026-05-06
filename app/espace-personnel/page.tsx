@@ -59,7 +59,7 @@ export default function EspacePersonnel() {
                     {/* Large Background Logo Watermark */}
                     <div className="absolute top-1/2 right-[-10%] -translate-y-1/2 opacity-5 pointer-events-none rotate-12">
                         <Image
-                            src="/images/resonance-logo.png"
+                            src="/images/resonance-logo-white.png"
                             alt=""
                             width={800}
                             height={800}

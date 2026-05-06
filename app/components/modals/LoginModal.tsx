@@ -112,7 +112,7 @@ export default function LoginModal({ isOpen, onClose, onOpenRegister, onLoginSuc
                             {/* Logo */}
                             <div className="mb-5">
                                 <Image
-                                    src="/images/resonance-logo.png"
+                                    src="/images/resonance-logo-white.png"
                                     alt="Résonance"
                                     width={80}
                                     height={80}

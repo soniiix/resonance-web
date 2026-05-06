@@ -174,7 +174,7 @@ export default function RegisterModal({ isOpen, onClose }: RegisterModalProps) {
                             <span className="text-black font-semibold text-sm">7 jours d'essais offerts</span>
                         </div>
                         <Image
-                            src="/images/resonance-logo.png"
+                            src="/images/resonance-logo-white.png"
                             alt="Logo"
                             width={90}
                             height={90}
@@ -200,7 +200,7 @@ export default function RegisterModal({ isOpen, onClose }: RegisterModalProps) {
                             <span className="text-black font-semibold text-sm">7 jours d'essais offerts</span>
                         </div>
                         <Image
-                            src="/images/resonance-logo.png"
+                            src="/images/resonance-logo-white.png"
                             alt="Logo"
                             width={90}
                             height={90}
@@ -286,7 +286,7 @@ export default function RegisterModal({ isOpen, onClose }: RegisterModalProps) {
             </form>
             <div className="flex justify-end pt-10">
                 <Image
-                    src="/images/resonance-logo.png"
+                    src="/images/resonance-logo-white.png"
                     alt="Logo"
                     width={40}
                     height={40}

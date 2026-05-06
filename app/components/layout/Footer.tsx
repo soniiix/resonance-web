@@ -13,7 +13,7 @@ export default function Footer() {
                     <div className="flex flex-col items-start gap-6">
                         <Link href="/">
                             <Image
-                                src="/images/resonance-logo.png"
+                                src="/images/resonance-logo-white.png"
                                 alt="Résonance Logo"
                                 width={120}
                                 height={120}

@@ -13,7 +13,7 @@ export default function UnderConstruction() {
                 {/* Logo */}
                 <div className="mb-12">
                     <Image
-                        src="/images/resonance-logo.png"
+                        src="/images/resonance-logo-white.png"
                         alt="Résonance Logo"
                         width={100}
                         height={100}
